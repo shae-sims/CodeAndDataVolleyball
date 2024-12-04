@@ -101,15 +101,68 @@ if st.sidebar.button("Graphics and Exploration"):
 #Put things on the introduction Page
 
 if st.session_state.current_page == "Introduction":
-    st.header("Introduction")
-    st.subheader('This App')
-    st.write('This app is designed to help you explore volleyball data. It looks into how player rankings are decided and compares different players to each other')
-    st.write('The next page of this application has two tabs. The first looks at the correlation of different skills in the game of volleyball compared to rank, and compared to each other.')
-    st.write('The other tab has players stats that you can compare. The graph will display the highest ranked players, the lowest ranked players, and random list of players to compare their skills. There is also a table displaying all the players names in order of ranking.')
-    st.write('For each graph, except the correlation matrix on the bottom of the first tab, the user can pick which skills are being displayed. Some graphs allow more user input to see what you can discover.')
-    st.subheader("The Data")
-    st.write('This application is made using data found from the Big 10 collegiate volleyball conference. They are ranked based off of different skills that they perform throughout volleyball games')
-
+        st.title('Welcome to the Volleyball Data Explorer!')
+        st.markdown("""
+        ### Introduction
+        This is an interactive app designed to help you explore volleyball data and see what you can find. No matter who you are this app can help analyze and compare player performance and outcomes in new ways.""")
+        st.markdown("""
+        #### What You Will Find
+        On the next page, called "Graphics and Exploration" you will find two tabs:
+        1. **Correlation**
+            This tab allows you to explore the correlations between different variables. One being player rankings! It gives specific insights into what really effects players standings in their division.
+        2. **Individual Players**
+            This tab allows you to explore individuals and groups of players you can do this by:
+            - Selecting whether you want to see the top-ranked players, lowest-ranked players, or a random selection of players.
+            - Selecting the number of players you would like to see
+            - Selecting which skills you would like to compare
+            You will be able to see a graph that shows all this information and it will also be displayed in  an easy to read table.
+        """)
+        st.markdown("""
+        #### Customization & Interactivity
+        Most graphs, except the correlation matrix on the first tab, allow you to select specific skills to display. Some charts even provide additional customization options to empower you to uncover unique insights.
+        """)
+        st.markdown("""
+        #### The Data Behind the App
+        This application uses data from the Big 10 colliegiate volleyball conference. It has information on players rank based of off important skills
+        The information you will find on each player are:
+        1. Rank: 
+            How th player is ranked in comparison to all other athletes in the Big 10, 1 being the highest rank.
+        2. Name: 
+            The name of the athlete
+        3. Games Played: 
+            The number of games played by an athlete each game is made up of 3-5 sets. Teams must win 3 sets to win a game.
+        4. Sets Played:	
+            The number of sets played by an athlete. Sets are played to 25 and you must win by 2 points. If a fifth set is necessary it is played to 15.
+        5. Kills: 
+            An offensive attack on a ball that results in a point to the team that hit it. This is the total amount of kills for that player
+        6. Kills per Set: 
+            The number of kills per set player
+        7. Hitting Percentage: 
+            A score given to an athlete from -1 to 1. 1 meaning they always hit kills, -1 meaning they only hit errors (meaning it results in points for the other team)
+        8. Assists: 
+            An overhand touch on the ball that results in a hitter getting a kill. The total amount for all the games.
+        9. Assists per Set: 
+            The number of assists per set played
+        10.	Blocks: 
+            A defensive move that is when a player jumps up at the net to stop an opposing player from hitting the ball over.
+        11.	Blocks per Set:     
+            The number of blocks per set played.
+        12.	Digs: 
+            Passing a hard driven ball successfully.
+        13.	Digs per Set: 
+            The number of Digs per set played
+        14.	Service Aces(Aces): 
+            When a player serves a ball over the net and it results in a point.
+        15.	Service Aces per Set: 
+            The number of aces per set player
+        16.	Reception Percentage: 
+            The percentage of good receptions a player has compared to the total amount of receptions.
+        """)
+        st.markdown("""
+        #### Ready, Set, GO!
+        Now that you know a little more about this app. Click on the " Graphics and Exploration" in the sidebar to start your journey!
+        """)
+        
 #Create second Page
 elif st.session_state.current_page == "Graphics and Exploration":
     tab1, tab2 = st.tabs(['Correlation', 'Individual Players'])
